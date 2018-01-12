@@ -16,7 +16,10 @@ class LanguageCrudController extends CrudController
     public function __construct()
     {
         parent::__construct();
-
+    }
+    
+    public function setup
+    {
         $this->crud->setModel("Backpack\LangFileManager\app\Models\Language");
         $this->crud->setRoute(config('backpack.base.route_prefix', 'admin').'/language');
         $this->crud->setEntityNameStrings(trans('backpack::langfilemanager.language'), trans('backpack::langfilemanager.languages'));
